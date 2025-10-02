@@ -814,7 +814,200 @@
                 <div style="text-align:center;">
                 <b>Please open this page in your Browser. Otherwise you can't download your image.</b><br>
   (দয়া করে এই পেইজটির লিঙ্ক কপি করে আপনার ফোন ব্রাউজারে খুলুন। না হলে আপনি আপনার ছবি ডাউনলোড করতে পারবেন না।)
-                    <br><b>Auto Background Removal Enabled</b><br>
+
+<!-- Premium Image Instruction Card -->
+<div style="
+    width: 180px;
+    margin: 15px auto;
+    padding: 10px 15px;
+    text-align: center;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: transparent;
+    border-radius: 16px;
+    border: 1.5px solid #f1f5f9;
+    position: relative;
+    backdrop-filter: blur(10px);
+">
+
+    <!-- Decorative Elements -->
+    <div style="
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 3px;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        border-radius: 0 0 4px 4px;
+    "></div>
+
+    <div style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 12px;
+    ">
+        <div style="
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        ">✨</div>
+        
+        <p style="
+            font-size: 13px;
+            color: #1e293b;
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        ">
+            ছবি নির্দেশিকা
+        </p>
+    </div>
+
+    <!-- Image Container -->
+    <div style="
+        position: relative;
+        display: inline-block;
+        margin-bottom: 12px;
+        cursor: pointer;
+    ">
+        <div style="
+            padding: 8px;
+            background: white;
+            border-radius: 0px;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        ">
+            <img 
+                id="instructionImg"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivzNfY7cU4aNUJk-kEMP-I6I4LAgaz4nk00MAA8PE36bt7nwFPYgJabgg0HM_x7zVUdaSd4bcPM727Zztpqr5Und9PBzIP1hClk-aczvB_5kQ2r_Cm7gNIORy-RUCnvWBQruWm0X38ojc19X41g_0ttU-NI-qlj843IxevSv-8jzIJXEwpsaEkgWg3xUA/s2400/1000040204.png" 
+                alt="আদর্শ ছবির উদাহরণ" 
+                style="
+                    width: 100%;
+                    max-width: 120px;
+                    height: auto;
+                    border-radius: 8px;
+                    display: block;
+                "
+            >
+        </div>
+        
+        <!-- Quality Badge -->
+        <div style="
+            position: absolute;
+            bottom: -6px;
+            right: -6px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 9px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+        ">
+            HD
+        </div>
+    </div>
+
+    <!-- Requirements List -->
+    <div style="
+        text-align: left;
+        background: #f8fafc;
+        padding: 12px;
+        border-radius: 8px;
+        margin-top: -6px;
+    ">
+        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: -3px; margin-top: -6px;">
+            <span style="color: #10b981; font-size: 12px;">✓</span>
+            <span style="font-size: 10px; color: #475569;">পরিষ্কার ও স্পষ্ট ছবি</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: -6px;">
+            <span style="color: #10b981; font-size: 12px;">✓</span>
+            <span style="font-size: 10px; color: #475569;">কাছ থেকে তুলা</span>
+        </div>
+    </div>
+
+    <!-- Footer Note -->
+    <p style="
+        font-size: 9px;
+        color: #64748b;
+        margin: 10px 0 0 0;
+        font-style: italic;
+        line-height: 1.4;
+    ">
+        এই রকম সুন্দর ও স্পষ্ট ছবি আপলোড করুন
+    </p>
+
+</div>
+
+<!-- Lightbox Modal -->
+<div id="imgModal" style="
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+">
+    <span id="closeModal" style="
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+    ">&times;</span>
+    <img id="modalImg" style="
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    ">
+</div>
+
+<script>
+    // Get elements
+    var modal = document.getElementById("imgModal");
+    var img = document.getElementById("instructionImg");
+    var modalImg = document.getElementById("modalImg");
+    var closeBtn = document.getElementById("closeModal");
+
+    // Open modal on click
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    }
+
+    // Close modal
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close modal on outside click
+    modal.onclick = function(e) {
+        if(e.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+                   
+                    <b>Auto Background Removal Enabled</b><br>
                     Background will be removed automatically when you upload
                 </div>
                 <button class="btn" onclick="downloadImage()">
