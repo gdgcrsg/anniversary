@@ -52,6 +52,55 @@
             margin: 0 auto;
             padding: 20px;
         }
+        /* ----- ADMIN BUTTON (TOP RIGHT CORNER) ----- */
+        .admin-login-btn {
+            position: fixed;
+            top: 18px;
+            right: 20px;
+            z-index: 9999;
+            background: linear-gradient(135deg, #1e2a3a, #0f172a);
+            backdrop-filter: blur(6px);
+            border-radius: 40px;
+            padding: 8px 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            border: 1px solid rgba(255,215,0,0.4);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            color: #ffec99;
+            cursor: pointer;
+        }
+
+        .admin-login-btn i {
+            font-size: 16px;
+            color: #ffd966;
+        }
+
+        .admin-login-btn:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #0f172a, #1e2a3a);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.3);
+            border-color: rgba(255,215,0,0.8);
+            color: #fff3bf;
+        }
+
+        /* Responsive adjustment: on very small screens */
+        @media (max-width: 640px) {
+            .admin-login-btn {
+                top: 12px;
+                right: 12px;
+                padding: 6px 14px;
+                font-size: 12px;
+            }
+            .admin-login-btn i {
+                font-size: 12px;
+            }
+        }
 
         /* Header Styles */
         .header {
@@ -69,6 +118,7 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 15px;
+            
         }
 
         .logo {
@@ -532,10 +582,18 @@
 
         .section-title {
             font-weight: 700;
-            text-decoration: underline;
-            margin: 20px 0 10px;
+            
+            margin: 10px 0 10px;
             color: var(--accent);
         }
+        .social-section {
+    outline: 1px solid green;  /* Thin green outline */
+    /* Optional: Add some padding so the outline doesn't touch the content */
+    padding: 5px;
+    /* Optional: Rounded corners for the outline */
+    border-radius: 12px;
+    margin-top: 20px;
+}
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -722,6 +780,14 @@
 </head>
 <body>
     <div class="container">
+              <!-- ADMIN LOGIN BUTTON - TOP RIGHT CORNER (Fixed) -->
+        <a href="https://gdgcrsg.github.io/portal/Anniversary/Admin-Panel.html" 
+           class="admin-login-btn" 
+           target="_blank" 
+           rel="noopener noreferrer">
+            <i class="fas fa-user-shield"></i> 
+            <span>Admin Login</span>
+        </a>
         <!-- Header -->
         <header class="header">
             <div class="logo-container">
@@ -1135,33 +1201,35 @@
                 <a href="https://facebook.com/groups/gdcrover/" target="_blank">Gurudoyal Govt. College Rover Scout Group</a>
             </div>
             
-            <div class="section-title">My Personal Social Accounts</div>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/MD.Ashfaq01" target="_blank" class="social-icon">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/md.ashfaq01" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.tiktok.com/@mdashfaq.king?_t=ZS-8zQHzCpJy9H&_r=1" target="_blank" class="social-icon">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/md-ashfaqur-rahman-tanim-407805290" target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://wa.me/qr/3ITBKA5Y5SUSI1" target="_blank" class="social-icon">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="mailto:mdashfaqurrahmantanim@gmail.com" target="_blank" class="social-icon">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://www.youtube.com/@md.ashfaq01" target="_blank" class="social-icon">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://rovermdashfaq.github.io/portfolio/" target="_blank" class="social-icon">
-                    <i class="fas fa-globe"></i>
-                </a>
-            </div>
+            <div class="social-section">
+    <div class="section-title" style="bold;">My Personal Social Accounts</div>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/MD.Ashfaq01" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/md.ashfaq01" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@mdashfaq.king?_t=ZS-8zQHzCpJy9H&_r=1" target="_blank" class="social-icon">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/md-ashfaqur-rahman-tanim-407805290" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://wa.me/qr/3ITBKA5Y5SUSI1" target="_blank" class="social-icon">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:mdashfaqurrahmantanim@gmail.com" target="_blank" class="social-icon">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.youtube.com/@md.ashfaq01" target="_blank" class="social-icon">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://rovermdashfaq.github.io/portfolio/" target="_blank" class="social-icon">
+            <i class="fas fa-globe"></i>
+        </a>
+    </div>
+</div>
         </footer>
     </div>
 
